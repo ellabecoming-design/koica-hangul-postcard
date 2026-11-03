@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hangul Postcard Studio | KOICA SAMASAMA 5TH</title>
+<style>
+:root{--blue:#2d4fa3;--blue-dark:#203d83;--ink:#232935;--muted:#697281;--line:#e0e5ed;--bg:#f5f7fa;--white:#fff}*{box-sizing:border-box}html,body{margin:0}body{font-family:Arial,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;color:var(--ink);background:var(--bg)}header{background:var(--blue);color:#fff;padding:20px max(24px,calc((100vw - 1330px)/2));display:flex;align-items:center;justify-content:space-between;gap:12px}header h1{font-size:22px;margin:0;font-weight:750;letter-spacing:-.5px}header p{font-size:12px;opacity:.85;margin:5px 0 0}.pill{font-size:12px;border:1px solid #ffffff7a;border-radius:40px;padding:7px 12px;white-space:nowrap}main{max-width:1360px;margin:auto;padding:22px 20px 50px;display:grid;grid-template-columns:minmax(320px,440px) minmax(500px,1fr);gap:22px}.panel{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:0 4px 22px #18284707}.panel h2{font-size:17px;margin:0 0 8px}.sub{color:var(--muted);font-size:13px;line-height:1.5;margin:0 0 18px}.section-title{font-size:12px;color:var(--blue);font-weight:800;margin:20px 0 9px;letter-spacing:.4px}.row{display:flex;gap:12px}.field{flex:1;min-width:0}.field label{font-size:12px;font-weight:700;display:block;margin:0 0 7px}.field input{width:100%;height:42px;border:1px solid #ccd4df;border-radius:9px;padding:8px 11px;font:inherit;outline-color:var(--blue)}.help{font-size:11px;color:var(--muted);line-height:1.5;margin:7px 0 0}.status{font-size:11px;margin-top:7px;color:#925d20}.status.good{color:#26754b}.drop{min-height:175px;border:2px dashed #a7b8d9;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;cursor:pointer;text-align:center;background:#f8faff;transition:.15s;overflow:hidden}.drop.drag{border-color:var(--blue);background:#eaf0ff}.drop svg{width:28px;height:28px;stroke:var(--blue)}.drop strong{font-size:13px}.drop small{color:var(--muted);font-size:11px}.drop img{width:124px;height:124px;object-fit:contain}.buttons{display:flex;gap:8px;margin:14px 0}.btn{border:1px solid #ccd5e1;background:#fff;border-radius:10px;padding:11px 14px;font-size:13px;font-weight:700;cursor:pointer;color:var(--ink)}.btn:hover{background:#f3f6fc}.btn:disabled{cursor:not-allowed;opacity:.38}.primary{background:var(--blue);border-color:var(--blue);color:#fff}.primary:hover{background:var(--blue-dark)}.btn.flex{flex:1}.notice{padding:11px 12px;background:#f3f6fb;border-radius:9px;font-size:11px;line-height:1.6;color:#526277}.preview-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:16px}.count{font-size:12px;color:var(--blue);background:#eff3fc;padding:8px 11px;border-radius:20px;font-weight:800}.sheet-wrap{background:#e8ebf0;border-radius:12px;padding:15px;display:flex;justify-content:center;align-items:center;overflow:auto}.sheet{width:min(100%,550px);aspect-ratio:210/297;background:#fff;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;border:1px solid #b3bdcb;box-shadow:0 5px 20px #2430471b}.slot{min-width:0;min-height:0;border-right:1px dashed #c2c9d1;border-bottom:1px dashed #c2c9d1;position:relative;overflow:hidden;background:#fff}.slot:nth-child(even){border-right:0}.slot:nth-child(n+3){border-bottom:0}.empty{height:100%;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:6px;color:#b1b9c5;font-size:11px}.empty b{font-size:24px;font-weight:400}.slot-actions{position:absolute;right:6px;top:6px;display:flex;gap:3px;z-index:3}.slot-actions button{font-size:10px;padding:4px 6px;border:1px solid #d7dfec;border-radius:5px;background:#fff;cursor:pointer}.postcard{height:100%;width:100%;padding:8% 7% 7%;display:flex;flex-direction:column;align-items:center;justify-content:space-between;text-align:center;background:#fff;overflow:hidden}.card-top{width:100%;min-height:13%;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:3px}.overline{font-size:clamp(5px,.72vw,9px);color:#737e8c;letter-spacing:1.5px;font-weight:700}.person{font-size:clamp(8px,1.18vw,14px);font-weight:700;overflow-wrap:anywhere;line-height:1.3;max-width:100%}.art{width:100%;aspect-ratio:1/1;display:flex;justify-content:center;align-items:center;overflow:hidden;margin:auto 0}.art img{max-height:100%;max-width:100%;width:100%;height:100%;object-fit:contain}.placeholder{border:1px dashed #d4dbe6;border-radius:4px;color:#b1b9c5;font-size:11px;width:100%;aspect-ratio:1;display:grid;place-items:center}.card-footer{width:100%;display:flex;flex-direction:column;gap:4px;justify-content:flex-end;min-height:16%}.footer-rule{height:1px;background:#e3e6eb;margin-bottom:3px}.event{font-size:clamp(5px,.75vw,9px);font-weight:650;color:#515a69;line-height:1.3}.details{font-size:clamp(5px,.64vw,8px);color:#838b97;letter-spacing:.1px;line-height:1.3}.sheet-status{font-size:12px;color:var(--muted);margin-top:12px}.bottom-buttons{display:flex;gap:9px;flex-wrap:wrap;margin-top:14px}.bottom-buttons .btn{flex:1;min-width:140px}.print-area{display:none}.page-nav{display:flex;align-items:center;justify-content:center;gap:10px;margin:4px 0 14px}.page-nav strong{font-size:12px;color:#526277}.page-nav .btn{padding:8px 12px;font-size:12px}.tip{margin-top:10px;font-size:11px;color:#707b8b;line-height:1.6}.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}@media(max-width:930px){main{grid-template-columns:1fr}.sheet{max-width:550px}.overline{font-size:9px}.person{font-size:13px}.event{font-size:9px}.details{font-size:8px}}@media(max-width:500px){main{padding:12px;gap:12px}.panel{padding:14px}.sheet-wrap{padding:7px}.overline{font-size:6px}.person{font-size:9px}.event{font-size:6px}.details{font-size:5px}header{padding:15px}header h1{font-size:17px}.row{flex-direction:column;gap:9px}}
+@media print{@page{size:A4 portrait;margin:0}html,body{width:210mm;height:297mm;margin:0!important;padding:0!important;background:#fff!important}header,main,.panel,.sheet-wrap,.tip{display:none!important}.print-area{display:grid!important;width:210mm;height:297mm;grid-template-columns:105mm 105mm;grid-template-rows:148.5mm 148.5mm;position:absolute;top:0;left:0;background:white}.print-area .slot{border-right:0;border-bottom:0}.print-area .slot:nth-child(odd){border-right:.15mm solid #d1d5db}.print-area .slot:nth-child(-n+2){border-bottom:.15mm solid #d1d5db}.print-area .postcard{padding:10mm 8mm 9mm}.print-area .overline{font-size:8pt}.print-area .person{font-size:13pt}.print-area .event{font-size:8pt}.print-area .details{font-size:7pt}.print-area .slot-actions,.print-area .empty{display:none!important}.print-area .art{width:100%}.print-area .footer-rule{background:#ddd}*{print-color-adjust:exact;-webkit-print-color-adjust:exact}}
+</style>
+</head>
+<body>
+<header><div><h1>Hangul Postcard Studio</h1><p>KOICA SAMASAMA 5TH · Muntinlupa Early Childhood Education Forum</p></div><span class="pill">A6 세로 × 4 · A4 세로 인쇄</span></header>
+<main>
+<section class="panel"><h2 id="editorTitle">엽서 만들기</h2><p class="sub">이름 입력 → 변환 버튼으로 확인 → 네이버에서 한글 아트 제작 → 이미지 삽입. 이미지를 넣으면 자동으로 엽서가 추가됩니다.</p>
+<div class="section-title">01 · 관람객 이름</div><div class="row"><div class="field"><label for="english">English name · 첫 글자 자동 대문자</label><input id="english" placeholder="e.g. Ella" autocomplete="off" spellcheck="false"></div><div class="field"><label for="korean">한글 발음 · 입력 후 변환 버튼 사용</label><input id="korean" placeholder="자동 추천 / 직접 수정" autocomplete="off" spellcheck="false"></div></div><div class="buttons" style="margin:9px 0 0"><button class="btn" type="button" id="convertName">↻ 영어 → 한글 변환</button><button class="btn" type="button" id="convertEnglish">↻ 한글 → 영어 변환</button></div><p id="phoneticStatus" class="status">이름 입력 후 아래 변환 버튼을 눌러주세요. 자동으로 다른 입력칸을 변경하지 않습니다.</p>
+<div class="section-title">02 · 네이버 로고 프로젝트</div><div class="notice">확인한 한글 표기로 네이버에서 아트 이미지를 만든 뒤 복사하거나 저장하세요. 링크는 새 탭으로 열려 이 제작 화면이 유지됩니다.</div><div class="buttons"><a class="btn primary flex" style="display:inline-flex;align-items:center;justify-content:center;text-decoration:none" href="https://logoproject.naver.com/hanguel2018" target="_blank" rel="noopener noreferrer">네이버 로고 프로젝트 바로가기 ↗</a></div>
+<div class="section-title">03 · 한글 아트 이미지 삽입 · 자동 등록</div><div class="drop" id="drop" tabindex="0" role="button" aria-label="이미지 붙여넣기 또는 업로드"><div id="dropBody"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8" cy="8" r="1.3"/><path d="m4 17 5-5 4 4 3-3 4 5"/></svg><br><strong>Ctrl + V로 이미지 붙여넣기</strong><br><small>클릭하여 파일 선택하거나 이미지를 끌어놓으세요</small></div></div><input class="sr" type="file" accept="image/png,image/jpeg,image/webp,image/gif" id="fileInput"><div class="buttons"><button class="btn" id="upload">이미지 선택</button><button class="btn" id="removeImage" disabled>이미지 지우기</button></div><p class="help">정방형 이미지를 잘라내지 않고 그대로 맞춥니다. 이름 두 칸을 입력한 상태에서 이미지를 넣으면 엽서가 자동 등록됩니다. 이름이 비어 있으면 이미지는 그대로 보관됩니다.</p>
+<div class="section-title">자동 저장 및 백업</div><div class="notice" id="saveStatus" role="status" aria-live="polite">저장소 확인 중…</div><div class="buttons"><button class="btn" id="backupDownload" type="button">⬇ 백업 파일 다운로드</button><button class="btn" id="backupRestore" type="button">⬆ 백업 불러오기</button><input class="sr" id="backupInput" type="file" accept="application/json,.json"></div><p class="help">이름·이미지·인쇄 대기열을 이 브라우저에 자동 저장합니다. 다른 기기나 다른 브라우저에서는 자동으로 이어지지 않으니 백업 파일도 저장해 두세요.</p><div class="section-title">04 · 엽서 등록 · 자동 / 수동</div><div class="buttons"><button class="btn primary flex" id="add">+ 엽서 추가</button><button class="btn" id="cancel" hidden>수정 취소</button></div><div id="formMessage" class="status" aria-live="polite"></div><div class="notice">이름 두 칸을 확인하고 이미지를 넣으면 자동으로 대기열에 등록됩니다. 아래 버튼으로 수동 등록하거나 수정할 수도 있습니다. 이름 변환은 버튼을 눌러야 실행됩니다. 변환 결과는 모두 <b>추천값</b>입니다. 한글에서 영어로 변환하면 원래 영문 철자를 복원하지 못할 수 있습니다. 필리핀식·스페인어식 이름은 실제 발음과 다를 수 있으니 관람객에게 확인하고 수정하세요.</div>
+</section>
+<section class="panel"><div class="preview-head"><div><h2>A4 인쇄 미리보기</h2><p class="sub" style="margin:0">4개씩 페이지가 추가됩니다. 현재 페이지에 1개만 있어도 PDF로 저장할 수 있습니다.</p></div><span class="count" id="count">0 / 4</span></div><div class="page-nav"><button class="btn" id="prevPage" type="button">← 이전 페이지</button><strong id="pageLabel">1 / 1 페이지</strong><button class="btn" id="nextPage" type="button">다음 페이지 →</button></div><div class="sheet-wrap"><div class="sheet" id="sheet" aria-label="A4 4분할 미리보기"></div></div><div class="sheet-status" id="sheetStatus">작성 중인 엽서는 첫 번째 빈 칸에 미리 표시됩니다.</div><div class="bottom-buttons"><button class="btn primary" id="pdf" disabled>↓ 현재 페이지 PDF 다운로드</button><button class="btn" id="clear" disabled>현재 페이지 비우기</button></div><div class="bottom-buttons" style="margin-top:8px;justify-content:flex-end"><button class="btn" id="pdfAll" disabled style="flex:0 1 auto;color:#687486;font-size:12px">↓ 전체 PDF 다운로드 (기록용)</button></div><p class="sheet-status" id="pdfStatus" role="status">현재 표시된 페이지의 엽서만 PDF로 저장합니다. 전체 PDF는 아래 보조 버튼을 이용하세요. 다운로드 후에도 대기열은 유지됩니다.</p><p class="tip">PDF를 먼저 다운로드한 뒤 열어서 출력하세요. 인쇄 설정: A4 · <b>세로</b> · 배율 100% · 머리글/바닥글 끄기 · 가능하면 여백 없음. 프린터의 가장자리 인쇄 지원 여부에 따라 재단선 일부가 잘릴 수 있으므로 시험 인쇄가 필요합니다. PDF 저장만으로 대기열은 삭제되지 않습니다.</p></section>
+</main><div class="print-area" id="printArea"></div>
+<script>
+(()=>{'use strict';
+const $=s=>document.querySelector(s);const english=$('#english'),korean=$('#korean'),drop=$('#drop'),dropBody=$('#dropBody'),file=$('#fileInput');let imageData='',cards=[],editing=-1,manual=false,currentPage=0;
+const known={yohanes:'요하네스',johannes:'요하네스',johan:'요한',yohan:'요한',johann:'요한',ella:'엘라',lucas:'루카스',sophia:'소피아',sofia:'소피아',daniel:'다니엘',danielle:'다니엘',michael:'마이클',christine:'크리스틴',john:'존',johnny:'조니',mia:'미아',anna:'애나',anne:'앤',ana:'아나',maria:'마리아',marie:'마리',mary:'메리',jose:'호세',joseph:'조셉',joshua:'조슈아',josh:'조시',jan:'얀',jane:'제인',jenny:'제니',jennifer:'제니퍼',jessica:'제시카',jasmine:'재스민',james:'제임스',jack:'잭',jacob:'제이컵',julian:'줄리언',julia:'줄리아',julie:'줄리',mark:'마크',marc:'마크',marco:'마르코',marcos:'마르코스',paul:'폴',paula:'폴라',peter:'피터',pedro:'페드로',paolo:'파올로',carlo:'카를로',carlos:'카를로스',carla:'카를라',charles:'찰스',charlie:'찰리',christian:'크리스천',christina:'크리스티나',chris:'크리스',christopher:'크리스토퍼',kristine:'크리스틴',kim:'킴',angel:'앤젤',angela:'앤젤라',angelica:'앤젤리카',antonio:'안토니오',anthony:'앤서니',andrew:'앤드루',andre:'안드레',andrea:'안드레아',alex:'알렉스',alexander:'알렉산더',alexandra:'알렉산드라',alexa:'알렉사',alvin:'앨빈',alan:'앨런',allan:'앨런',aaron:'에런',abby:'애비',abigail:'애비게일',bea:'베아',bianca:'비앙카',ben:'벤',benjamin:'벤저민',brandon:'브랜던',brian:'브라이언',bryan:'브라이언',bella:'벨라',camille:'카밀',catherine:'캐서린',katherine:'캐서린',kate:'케이트',katie:'케이티',claire:'클레어',clarisse:'클라리스',david:'데이비드',dave:'데이브',dennis:'데니스',diana:'다이애나',diane:'다이앤',donna:'도나',edward:'에드워드',edwin:'에드윈',elizabeth:'엘리자베스',emily:'에밀리',emma:'에마',eric:'에릭',erika:'에리카',erika:'에리카',erica:'에리카',ethan:'이선',eva:'에바',faith:'페이스',felix:'펠릭스',francis:'프랜시스',francisco:'프란시스코',franz:'프란츠',gabriel:'게이브리얼',gabriela:'가브리엘라',grace:'그레이스',hannah:'해나',hazel:'헤이즐',ian:'이언',isaac:'아이작',isabel:'이사벨',isabella:'이사벨라',jade:'제이드',jason:'제이슨',jean:'진',jeanne:'잔',jerome:'제롬',joan:'조앤',joanna:'조애나',joel:'조엘',jonathan:'조너선',joy:'조이',joyce:'조이스',judith:'주디스',justin:'저스틴',karen:'캐런',kevin:'케빈',kyle:'카일',lara:'라라',laura:'로라',lea:'레아',leah:'리아',leo:'레오',leon:'리언',liam:'리엄',lisa:'리사',liza:'라이자',louise:'루이즈',luis:'루이스',lynn:'린',manuel:'마누엘',margaret:'마거릿',martin:'마틴',matthew:'매슈',max:'맥스',melanie:'멜러니',melissa:'멀리사',michelle:'미셸',miguel:'미겔',monica:'모니카',nathan:'네이선',nathalie:'나탈리',natalie:'나탈리',nicole:'니콜',nina:'니나',noah:'노아',olivia:'올리비아',patrick:'패트릭',patricia:'퍼트리샤',princess:'프린세스',rachel:'레이철',rafael:'라파엘',ralph:'랠프',rebecca:'리베카',renz:'렌즈',richard:'리처드',robert:'로버트',roberto:'로베르토',rochelle:'로셸',rose:'로즈',rosalie:'로잘리',ruby:'루비',ryan:'라이언',samantha:'서맨사',samuel:'새뮤얼',sarah:'세라',sara:'세라',sean:'숀',shane:'셰인',sherwin:'셔윈',stephanie:'스테퍼니',stephen:'스티븐',steven:'스티븐',susan:'수전',teresa:'테레사',theresa:'테레사',timothy:'티머시',trisha:'트리샤',vanessa:'버네사',victor:'빅터',victoria:'빅토리아',vincent:'빈센트',william:'윌리엄',yennie:'예니',yennis:'예니스',liz:'리즈',dani:'다니',lucy:'루시',rush:'러시',rhem:'렘','ga eun':'가은',ellaine:'일레인'};
+const initials={b:'ㅂ',c:'ㅋ',d:'ㄷ',f:'ㅍ',g:'ㄱ',h:'ㅎ',j:'ㅈ',k:'ㅋ',l:'ㄹ',m:'ㅁ',n:'ㄴ',p:'ㅍ',r:'ㄹ',s:'ㅅ',t:'ㅌ',v:'ㅂ',w:'ㅇ',y:'ㅇ',z:'ㅈ'};
+const blocks=[['tion','션'],['sion','전'],['ture','처'],['ch','ㅊ'],['sh','ㅅ'],['ph','ㅍ'],['th','ㄷ'],['ck','ㅋ'],['qu','ㅋ'],['ng','ㅇ'],['ee','이'],['oo','우'],['ou','아우'],['ow','아우'],['ai','에이'],['ay','에이'],['ei','에이'],['ey','이'],['ie','이'],['ea','이'],['oa','오'],['au','오'],['oi','오이'],['oy','오이']];
+const vowelMap={a:'아',e:'에',i:'이',o:'오',u:'우',y:'이'};const consonantMap={b:'브',c:'크',d:'드',f:'프',g:'그',h:'흐',j:'지',k:'크',l:'르',m:'므',n:'느',p:'프',q:'크',r:'르',s:'스',t:'트',v:'브',w:'우',x:'크스',z:'즈'};
+function suggestWord(word){const w=word.toLowerCase();if(known[w])return {value:known[w],certain:true};let out='';let i=0;while(i<w.length){let found=false;for(const [s,r] of blocks){if(w.startsWith(s,i)){out+=r;i+=s.length;found=true;break}}if(found)continue;const c=w[i],next=w[i+1]||'';if('aeiou'.includes(c)){out+=vowelMap[c];i++;continue}if(/[a-z]/.test(c)){if('aeiou'.includes(next)){const onset=initials[c]||'ㅇ';let consIndex={'ㄱ':0,'ㄴ':2,'ㄷ':3,'ㄹ':5,'ㅁ':6,'ㅂ':7,'ㅅ':9,'ㅇ':11,'ㅈ':12,'ㅊ':14,'ㅋ':15,'ㅌ':16,'ㅍ':17,'ㅎ':18}[onset];let vIndex={a:0,e:5,i:20,o:8,u:13}[next];out+=String.fromCharCode(0xAC00+consIndex*588+vIndex*28);i+=2}else{out+=consonantMap[c]||'';i++}}else{i++}}return {value:out,certain:false}}
+function suggestName(s){let certain=true;const result=s.trim().split(/([\s-]+)/).map(w=>{if(!/[a-z]/i.test(w))return w;const r=suggestWord(w);certain&&=r.certain;return r.value}).join('').replace(/\s+/g,' ').trim();return {value:result,certain}}
+// Korean → Latin: prefer familiar existing names; otherwise show Revised Romanization (not original English spelling).
+const preferredEnglish={
+ '엘라':'Ella','엘라':'Ella','루카스':'Lucas','소피아':'Sophia','다니엘':'Daniel','마이클':'Michael','크리스틴':'Christine','존':'John','미아':'Mia','애나':'Anna','요하네스':'Yohanes','요한':'Yohan',
+ '호세':'Jose','마리아':'Maria','제임스':'James','제시카':'Jessica','조슈아':'Joshua','루시':'Lucy','러시':'Rush','렘':'Rhem','가은':'Gaeun'
+};
+// Fill in dictionary fallbacks for a name only when no preferred spelling is specified.
+for(const [en,ko] of Object.entries(known)){if(!preferredEnglish[ko])preferredEnglish[ko]=en.charAt(0).toUpperCase()+en.slice(1)}
+const CHO=['g','kk','n','d','tt','r','m','b','pp','s','ss','','j','jj','ch','k','t','p','h'];
+const JUNG=['a','ae','ya','yae','eo','e','yeo','ye','o','wa','wae','oe','yo','u','wo','we','wi','yu','eu','ui','i'];
+const JONG=['','k','k','k','n','n','n','t','l','k','m','l','l','l','p','l','m','p','p','t','t','ng','t','t','k','t','p','t'];
+function romanizeHangul(s){return Array.from(s).map(ch=>{const cp=ch.codePointAt(0);if(cp<0xAC00||cp>0xD7A3)return ch;const x=cp-0xAC00;return CHO[Math.floor(x/588)]+JUNG[Math.floor(x%588/28)]+JONG[x%28]}).join('')}
+function suggestEnglish(s){let certain=true;const result=s.trim().split(/([\s-]+)/).map(w=>{if(!/[가-힣]/.test(w))return w;const knownEnglish=preferredEnglish[w];if(knownEnglish)return knownEnglish;certain=false;const rom=romanizeHangul(w);return rom.charAt(0).toUpperCase()+rom.slice(1)}).join('').replace(/\s+/g,' ').trim();return {value:result,certain}}
+function escapeHtml(s){return String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function capitalizeName(s){return String(s).replace(/(^|[\s\-'])([a-z])/g,(m,lead,letter)=>lead+letter.toUpperCase())}
+function values(){return {en:capitalizeName(english.value.trim()),ko:korean.value.trim(),img:imageData}}
+function cardMarkup(c){return `<div class="postcard"><div class="card-top"><div class="overline">MY NAME, IN HANGUL</div><div class="person">${escapeHtml(c.en)} <span style="color:#a6aeba">/</span> ${escapeHtml(c.ko)}</div></div><div class="art">${c.img?`<img alt="한글 이름 아트" src="${c.img}">`:'<div class="placeholder">이미지 미리보기</div>'}</div><div class="card-footer"><div class="footer-rule"></div><div class="event">Muntinlupa Early Childhood Education Forum</div><div class="details">2026.11.09 · KOICA SAMASAMA 5TH</div></div></div>`}
+function pageCount(){return Math.max(1,Math.ceil((cards.length+(editing<0?1:0))/4))}
+function update(){
+  const current=values(),preview=$('#sheet'),printArea=$('#printArea');preview.innerHTML='';printArea.innerHTML='';
+  const pages=pageCount();currentPage=Math.max(0,Math.min(currentPage,pages-1));
+  const draftSlot=editing>=0?editing:cards.length;
+  for(let j=0;j<4;j++){
+    const i=currentPage*4+j,isDraft=i===draftSlot;
+    const c=isDraft?current:cards[i],show=c&&(c.en||c.ko||c.img);
+    const el=document.createElement('div');el.className='slot';
+    if(show){el.innerHTML=cardMarkup(c)+(isDraft?'':`<div class="slot-actions"><button data-edit="${i}" aria-label="${i+1}번째 엽서 수정">수정</button><button data-del="${i}" aria-label="${i+1}번째 엽서 삭제">삭제</button></div>`)}
+    else el.innerHTML=`<div class="empty"><b>+</b>${i+1}번째 엽서</div>`;
+    preview.appendChild(el);
+  }
+  const allPrintPages=Math.max(1,Math.ceil(cards.length/4));
+  for(let p=0;p<allPrintPages;p++){
+    const printSheet=document.createElement('div');printSheet.className='print-sheet';
+    for(let j=0;j<4;j++){const pe=document.createElement('div');pe.className='slot';const c=cards[p*4+j];if(c)pe.innerHTML=cardMarkup(c);printSheet.appendChild(pe)}
+    printArea.appendChild(printSheet);
+  }
+  $('#count').textContent=cards.length+'장 · '+Math.ceil(cards.length/4)+'개 인쇄 페이지';
+  $('#pageLabel').textContent=`${currentPage+1} / ${pages} 페이지`;
+  $('#prevPage').disabled=currentPage===0;$('#nextPage').disabled=currentPage>=pages-1;
+  const currentCount=cards.slice(currentPage*4,currentPage*4+4).length;$('#pdf').disabled=!currentCount;$('#pdfAll').disabled=!cards.length;$('#clear').disabled=!currentCount;
+  $('#add').disabled=false;$('#add').textContent=editing>=0?'✓ 수정 내용 저장':'+ 엽서 추가';
+  scheduleSave();
+  $('#sheetStatus').textContent=editing>=0?`${editing+1}번째 엽서를 수정 중입니다. 저장하기 전까지 인쇄 대기열에는 반영되지 않습니다.`:`등록된 엽서 ${cards.length}장 · 작성 중인 엽서는 ${Math.floor(cards.length/4)+1}페이지의 ${(cards.length%4)+1}번째 칸에 표시됩니다. 현재 페이지 PDF와 전체 PDF 중 선택해 저장할 수 있습니다.`;
+}
+$('#prevPage').onclick=()=>{currentPage--;update()};
+$('#nextPage').onclick=()=>{currentPage++;update()};
+let lastDirection='en';
+function status(){
+ const el=$('#phoneticStatus');
+ el.textContent='이름을 입력한 뒤 원하는 방향의 변환 버튼을 누르세요. 입력만으로는 다른 이름이 바뀌지 않습니다.';
+ el.className='status';
+}
+function convertName(){if(!english.value.trim()){ $('#phoneticStatus').textContent='영어 이름을 먼저 입력해 주세요.';return }lastDirection='en';manual=false;const r=suggestName(english.value);korean.value=r.value;status();$('#phoneticStatus').textContent=r.certain?'한글 표기를 추천했습니다. 실제 발음을 확인해 주세요.':'한글 표기는 추정값입니다. 관람객에게 발음을 확인해 주세요.';update()}
+function convertEnglish(){if(!korean.value.trim()){ $('#phoneticStatus').textContent='한글 발음을 먼저 입력해 주세요.';return }lastDirection='ko';manual=true;const r=suggestEnglish(korean.value);english.value=capitalizeName(r.value);status();$('#phoneticStatus').textContent=r.certain?'영문 이름을 추천했습니다. 실제 철자를 확인해 주세요.':'로마자 표기 추정값입니다. 실제 영문 철자를 확인해 주세요.';update()}
+english.addEventListener('input',()=>{const start=english.selectionStart,end=english.selectionEnd;english.value=capitalizeName(english.value);try{english.setSelectionRange(start,end)}catch(_){}lastDirection='en';update()});
+korean.addEventListener('input',()=>{lastDirection='ko';manual=true;update()});
+$('#convertName').addEventListener('click',convertName);
+$('#convertEnglish').addEventListener('click',convertEnglish);
+let readingImage=false;
+function autoRegisterImage(){
+ const c=values();
+ if(!c.en||!c.ko){
+   $('#formMessage').textContent='이미지는 준비되었습니다. 영문 이름과 한글 표기를 확인한 뒤 + 엽서 추가를 눌러주세요.';
+   update();return;
+ }
+ if(editing>=0){
+   cards[editing]={...c};
+   const number=editing+1;
+   clearForm();$('#formMessage').textContent=`✓ ${number}번째 엽서 이미지가 교체되어 자동 저장되었습니다.`;
+   return;
+ }
+ cards.push({...c});const count=cards.length;
+ currentPage=Math.floor((count-1)/4);
+ clearForm();$('#formMessage').textContent=`✓ ${count}번째 엽서가 자동 등록되었습니다. 다음 관람객 이름을 입력하세요.`;
+}
+function setImg(f){
+ if(!f||!f.type.startsWith('image/')){alert('이미지 파일을 선택해 주세요.');return}
+ if(f.size>20*1024*1024){alert('20MB 이하의 이미지 파일을 사용해 주세요.');return}
+ if(readingImage)return;
+ readingImage=true;
+ const reader=new FileReader();
+ reader.onload=()=>{readingImage=false;imageData=reader.result;drawUpload();autoRegisterImage()};
+ reader.onerror=()=>{readingImage=false;alert('이미지를 읽지 못했습니다. 다시 선택해 주세요.')};
+ reader.readAsDataURL(f)
+}
+function drawUpload(){dropBody.innerHTML=imageData?`<img alt="현재 붙여넣은 이미지" src="${imageData}"><small>다른 이미지를 붙여넣거나 클릭하여 교체</small>`:`<svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8" cy="8" r="1.3"/><path d="m4 17 5-5 4 4 3-3 4 5"/></svg><strong>Ctrl + V로 이미지 붙여넣기</strong><small>클릭하여 파일 선택하거나 이미지를 끌어놓으세요</small>`;$('#removeImage').disabled=!imageData}
+$('#upload').onclick=()=>file.click();drop.onclick=()=>file.click();drop.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();file.click()}};file.onchange=()=>{if(file.files[0])setImg(file.files[0]);file.value=''};
+drop.addEventListener('dragover',e=>{e.preventDefault();drop.classList.add('drag')});drop.addEventListener('dragleave',()=>drop.classList.remove('drag'));drop.addEventListener('drop',e=>{e.preventDefault();drop.classList.remove('drag');if(e.dataTransfer.files[0])setImg(e.dataTransfer.files[0])});document.addEventListener('paste',e=>{const items=[...(e.clipboardData?.items||[])];const item=items.find(x=>x.type.startsWith('image/'));if(item){e.preventDefault();setImg(item.getAsFile())}});
+$('#removeImage').onclick=()=>{imageData='';drawUpload();update()};function clearForm(){english.value='';korean.value='';imageData='';manual=false;editing=-1;$('#editorTitle').textContent='엽서 만들기';$('#cancel').hidden=true;$('#formMessage').textContent='';drawUpload();status();update()}
+$('#add').onclick=()=>{const c=values();if(!c.en||!c.ko||!c.img){$('#formMessage').textContent='영문 이름, 한글 표기, 이미지 세 가지를 모두 입력해 주세요.';return}if(editing>=0){cards[editing]={...c};clearForm();return}cards.push({...c});currentPage=Math.floor((cards.length-1)/4);clearForm();$('#formMessage').textContent=`${cards.length}개가 인쇄 대기열에 등록되었습니다.`};$('#cancel').onclick=clearForm;
+$('#sheet').addEventListener('click',e=>{const edit=e.target.closest('[data-edit]'),del=e.target.closest('[data-del]');if(del){const i=+del.dataset.del;if(!confirm(`${i+1}번째 엽서를 삭제할까요?`))return;cards.splice(i,1);currentPage=Math.min(currentPage,Math.max(0,Math.ceil((cards.length+1)/4)-1));clearForm();return}if(edit){const i=+edit.dataset.edit;editing=i;currentPage=Math.floor(i/4);const c=cards[i];english.value=capitalizeName(c.en);korean.value=c.ko;imageData=c.img;manual=true;$('#editorTitle').textContent=`${i+1}번째 엽서 수정`;$('#cancel').hidden=false;drawUpload();status();update();english.focus()}});
+function openPrintablePage(){
+ const w=window.open('','_blank');
+ if(!w){alert('인쇄 탭이 차단되었습니다. PDF 다운로드 후 인쇄하는 방법을 권장합니다.');return}
+ const css=document.querySelector('style').textContent;
+ const pages=Array.from({length:Math.ceil(cards.length/4)},(_,p)=>`<div class="print-sheet">${Array.from({length:4},(_,j)=>`<div class="slot">${cards[p*4+j]?cardMarkup(cards[p*4+j]):''}</div>`).join('')}</div>`).join('');
+ const html=`<!doctype html><html lang="ko"><head><meta charset="utf-8"><title>엽서 전체 인쇄</title><style>${css}
+ body{background:#e8ebf0}.print-area{display:block;position:static;width:auto;height:auto;margin:0 auto}.print-sheet{display:grid;width:210mm;height:297mm;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;background:white;margin:20px auto;box-shadow:0 5px 20px #0002;break-after:page}.print-sheet .slot{border:0}.print-sheet .postcard{padding:10mm 8mm 9mm}.print-sheet .overline{font-size:8pt}.print-sheet .person{font-size:13pt}.print-sheet .event{font-size:8pt}.print-sheet .details{font-size:7pt}.toolbar{position:sticky;top:0;text-align:center;background:white;padding:16px;z-index:1}.toolbar button{background:#2d4fa3;color:white;padding:10px 20px;border:0;border-radius:8px;cursor:pointer}
+ @media print{@page{size:A4 portrait;margin:0}.toolbar{display:none!important}.print-area{display:block!important;position:static!important;width:auto!important;height:auto!important}.print-sheet{box-shadow:none!important;margin:0!important;break-after:page}.print-sheet:last-child{break-after:auto}}
+ </style></head><body><div class="toolbar"><button onclick="window.print()">인쇄 창 열기</button> · 전체 ${cards.length}장 / ${Math.ceil(cards.length/4)}페이지 · Ctrl+P</div><div class="print-area">${pages}</div></body></html>`;
+ w.document.open();w.document.write(html);w.document.close();w.focus();
+}
+
+// Offline PDF download: render one A4 sheet to a raster image, then wrap it into a valid one-page PDF.
+// No network, popup, or external libraries are required.
+function loadArt(src){return new Promise((resolve,reject)=>{const im=new Image();im.onload=()=>resolve(im);im.onerror=()=>reject(new Error('한글 아트 이미지를 읽을 수 없습니다.'));im.src=src})}
+function fitFont(ctx,value,maxWidth,initial,min){let size=initial;while(size>min){ctx.font=`700 ${size}px Arial, "Malgun Gothic", sans-serif`;if(ctx.measureText(value).width<=maxWidth)break;size-=2}return size}
+function drawCard(ctx,c,x,y,w,h,art){
+  if(!c)return;
+  const cx=x+w/2,pad=90;
+  ctx.fillStyle='#ffffff';ctx.fillRect(x,y,w,h);
+  ctx.textAlign='center';ctx.textBaseline='middle';
+  ctx.fillStyle='#75808e';ctx.font='700 32px Arial, sans-serif';ctx.fillText('MY NAME, IN HANGUL',cx,y+155);
+  const title=`${c.en}  /  ${c.ko}`;
+  const fs=fitFont(ctx,title,w-pad*2,53,25);
+  ctx.font=`700 ${fs}px Arial, "Malgun Gothic", sans-serif`;ctx.fillStyle='#27303d';ctx.fillText(title,cx,y+223);
+  // Image is square and always uses object-fit:contain without cropping.
+  const square=w-2*pad,artX=x+pad,artY=y+310;
+  ctx.save();ctx.fillStyle='#ffffff';ctx.fillRect(artX,artY,square,square);
+  if(art){const scale=Math.min(square/art.width,square/art.height);const iw=art.width*scale,ih=art.height*scale;ctx.drawImage(art,artX+(square-iw)/2,artY+(square-ih)/2,iw,ih)}
+  ctx.restore();
+  const ruleY=y+h-270;ctx.strokeStyle='#e0e5eb';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(x+pad,ruleY);ctx.lineTo(x+w-pad,ruleY);ctx.stroke();
+  ctx.fillStyle='#586373';ctx.font='600 32px Arial, "Malgun Gothic", sans-serif';ctx.fillText('Muntinlupa Early Childhood Education Forum',cx,y+h-205,w-2*pad);
+  ctx.fillStyle='#84909d';ctx.font='30px Arial, sans-serif';ctx.fillText('2026.11.09  ·  KOICA SAMASAMA 5TH',cx,y+h-145,w-2*pad);
+}
+function encodePdfPages(dataUrls){
+ const enc=new TextEncoder(),parts=[],offsets=[0];let length=0;
+ function add(b){parts.push(b);length+=b.length}
+ function str(t){add(enc.encode(t))}
+ function obj(num,head,stream){offsets[num]=length;str(num+' 0 obj\n'+head);if(stream){str('\nstream\n');add(stream);str('\nendstream')}str('\nendobj\n')}
+ const count=dataUrls.length;
+ str('%PDF-1.4\n%\xE2\xE3\xCF\xD3\n');
+ obj(1,'<< /Type /Catalog /Pages 2 0 R >>');
+ const kids=Array.from({length:count},(_,i)=>(3+3*i)+' 0 R').join(' ');
+ obj(2,`<< /Type /Pages /Kids [${kids}] /Count ${count} >>`);
+ for(let i=0;i<count;i++){
+   const base=3+3*i;
+   const raw=atob(dataUrls[i].split(',')[1]);const bytes=new Uint8Array(raw.length);for(let j=0;j<raw.length;j++)bytes[j]=raw.charCodeAt(j);
+   obj(base,`<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.2756 841.8898] /Resources << /XObject << /Im0 ${base+1} 0 R >> >> /Contents ${base+2} 0 R >>`);
+   obj(base+1,`<< /Type /XObject /Subtype /Image /Width 2480 /Height 3508 /ColorSpace /DeviceRGB /BitsPerComponent 8 /Filter /DCTDecode /Length ${bytes.length} >>`,bytes);
+   const content=enc.encode('q\n595.2756 0 0 841.8898 0 0 cm\n/Im0 Do\nQ\n');
+   obj(base+2,`<< /Length ${content.length} >>`,content);
+ }
+ const total=2+3*count;
+ const xrefAt=length;str(`xref\n0 ${total+1}\n0000000000 65535 f \n`);for(let i=1;i<=total;i++)str(String(offsets[i]).padStart(10,'0')+' 00000 n \n');
+ str(`trailer\n<< /Size ${total+1} /Root 1 0 R >>\nstartxref\n${xrefAt}\n%%EOF`);
+ return new Blob(parts,{type:'application/pdf'});
+}
+function localFileTimestamp(){
+ const d=new Date(), pad=n=>String(n).padStart(2,'0');
+ return `${d.getFullYear()}${pad(d.getMonth()+1)}${pad(d.getDate())}_${pad(d.getHours())}${pad(d.getMinutes())}${pad(d.getSeconds())}`;
+}
+async function downloadPdf(scope='page'){
+ if(!cards.length)return;
+ if(editing>=0){alert('수정 중인 엽서를 먼저 저장하거나 취소하세요.');return}
+ const pageNumber=currentPage+1;
+ const selected=scope==='all'?cards.slice():cards.slice(currentPage*4,currentPage*4+4);
+ if(!selected.length){alert('현재 페이지에는 저장할 엽서가 없습니다.');return}
+ const statusEl=$('#pdfStatus'),btn=$('#pdf'),allBtn=$('#pdfAll');btn.disabled=true;allBtn.disabled=true;
+ statusEl.textContent=(scope==='all'?'전체':'현재 페이지')+' PDF를 생성하고 있습니다…';
+ try{
+  if(document.fonts?.ready)await document.fonts.ready;
+  const canvas=document.createElement('canvas');canvas.width=2480;canvas.height=3508;
+  const ctx=canvas.getContext('2d',{alpha:false});if(!ctx)throw Error('캔버스를 생성하지 못했습니다.');
+  const urls=[],cw=1240,ch=1754,pageTotal=Math.ceil(selected.length/4);
+  for(let p=0;p<pageTotal;p++){
+   ctx.fillStyle='#fff';ctx.fillRect(0,0,2480,3508);
+   const group=selected.slice(p*4,p*4+4);
+   const arts=await Promise.all(group.map(c=>loadArt(c.img)));
+   group.forEach((c,j)=>drawCard(ctx,c,(j%2)*cw,Math.floor(j/2)*ch,cw,ch,arts[j]));
+   ctx.strokeStyle='#d3d8df';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(1240,0);ctx.lineTo(1240,3508);ctx.moveTo(0,1754);ctx.lineTo(2480,1754);ctx.stroke();
+   urls.push(canvas.toDataURL('image/jpeg',0.93));
+   statusEl.textContent=`PDF 생성 중: ${p+1}/${pageTotal}페이지`;
+  }
+  const pdf=encodePdfPages(urls),url=URL.createObjectURL(pdf),a=document.createElement('a');a.href=url;
+  a.download=`KOICA_Hangul_Postcards_${scope==='all'?'ALL':'Page_'+String(pageNumber).padStart(2,'0')}_${localFileTimestamp()}.pdf`;
+  document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),60000);
+  statusEl.textContent=`PDF 다운로드 요청 완료 · ${scope==='all'?'전체':pageNumber+'페이지'} ${selected.length}장 / A4 ${pageTotal}페이지. 엽서는 삭제되지 않습니다. 다운로드 폴더에서 파일을 확인하세요.`;
+ }catch(err){statusEl.textContent='PDF 생성 실패: '+err.message;alert('PDF를 만들지 못했습니다: '+err.message)}
+ finally{btn.disabled=!cards.slice(currentPage*4,currentPage*4+4).length;allBtn.disabled=!cards.length}
+}
+$('#pdf').addEventListener('click',()=>downloadPdf('page'));
+$('#pdfAll').addEventListener('click',()=>downloadPdf('all'));
+$('#clear').onclick=()=>{
+ const start=currentPage*4, n=cards.slice(start,start+4).length;
+ if(!n)return;
+ const hint=start+4<cards.length?'\n뒤에 있는 엽서는 남지만 앞으로 당겨지면서 페이지 번호가 바뀝니다.':'';
+ if(!confirm(`현재 ${currentPage+1}페이지의 엽서 ${n}개를 삭제할까요?\n삭제는 자동 저장에 반영됩니다. 먼저 PDF 또는 백업 파일을 저장했는지 확인해 주세요.${hint}`))return;
+ cards.splice(start,n);
+ currentPage=Math.min(currentPage,Math.max(0,Math.ceil((cards.length+1)/4)-1));
+ clearForm();
+ $('#formMessage').textContent=`현재 페이지의 엽서 ${n}개를 삭제했습니다.`;
+};
+
+// Autosave uses IndexedDB to avoid localStorage's small per-origin quota for images.
+const DB_NAME='koica_hangul_postcard_autosave_v1', STORE='snapshots';
+let db=null, ready=false, saveTimer=null, saveBusy=false, saveAgain=false;
+function saveMessage(message,warning=false){const el=$('#saveStatus');el.textContent=message;el.style.color=warning?'#aa4a16':''}
+function openDatabase(){return new Promise((resolve,reject)=>{if(!('indexedDB' in window)){reject(new Error('브라우저가 IndexedDB를 지원하지 않습니다.'));return}const req=indexedDB.open(DB_NAME,1);req.onupgradeneeded=()=>{if(!req.result.objectStoreNames.contains(STORE))req.result.createObjectStore(STORE)};req.onsuccess=()=>resolve(req.result);req.onerror=()=>reject(req.error||Error('저장소 열기 오류'));req.onblocked=()=>reject(Error('저장소가 다른 탭에 의해 잠겼습니다.'))})}
+function readSnapshot(){return new Promise((resolve,reject)=>{const tx=db.transaction(STORE,'readonly');const req=tx.objectStore(STORE).get('current');req.onsuccess=()=>resolve(req.result);req.onerror=()=>reject(req.error)})}
+function writeSnapshot(data){return new Promise((resolve,reject)=>{const tx=db.transaction(STORE,'readwrite');tx.objectStore(STORE).put(data,'current');tx.oncomplete=resolve;tx.onerror=()=>reject(tx.error||Error('저장에 실패했습니다.'));tx.onabort=()=>reject(tx.error||Error('저장이 취소됐습니다.'))})}
+function snapshot(){return {version:1, savedAt:new Date().toISOString(),draft:{en:english.value,ko:korean.value,img:imageData,manual,lastDirection,editing},cards:cards.map(c=>({...c}))}}
+function scheduleSave(){if(!ready)return;saveMessage('● 변경 사항 저장 중…');clearTimeout(saveTimer);saveTimer=setTimeout(saveNow,450)}
+async function saveNow(){if(!ready||!db)return;if(saveBusy){saveAgain=true;return}saveBusy=true;try{await writeSnapshot(snapshot());saveMessage('✓ 자동 저장됨 · '+new Date().toLocaleTimeString('ko-KR'))}catch(err){saveMessage('⚠ 자동 저장 실패: '+(err?.name==='QuotaExceededError'?'저장 공간 부족':err.message)+' · 백업 파일을 다운로드하세요.',true)}finally{saveBusy=false;if(saveAgain){saveAgain=false;scheduleSave()}}}
+function applySnapshot(data){if(!data||data.version!==1||!Array.isArray(data.cards))throw Error('지원하지 않는 백업 파일입니다.');cards=data.cards.filter(c=>c&&typeof c.en==='string'&&typeof c.ko==='string'&&typeof c.img==='string').map(c=>({en:capitalizeName(c.en),ko:c.ko,img:c.img}));const d=data.draft||{};english.value=capitalizeName(d.en||'');korean.value=d.ko||'';imageData=d.img||'';manual=!!d.manual;lastDirection=d.lastDirection==='ko'?'ko':'en';editing=Number.isInteger(d.editing)&&d.editing>=0&&d.editing<cards.length?d.editing:-1;$('#editorTitle').textContent=editing>=0?`${editing+1}번째 엽서 수정`:'엽서 만들기';$('#cancel').hidden=editing<0;drawUpload();status();update()}
+async function initializeAutosave(){try{db=await openDatabase();const data=await readSnapshot();if(data){applySnapshot(data);saveMessage('✓ 이전 작업 복원 완료 · '+(data.savedAt?new Date(data.savedAt).toLocaleString('ko-KR'):'저장된 작업'))}else{status();saveMessage('✓ 자동 저장 준비 완료')}}catch(err){status();saveMessage('⚠ 이 실행 환경에서는 자동 저장을 사용할 수 없습니다. 백업 다운로드를 이용하세요. ('+err.message+')',true)}finally{ready=true}}
+$('#backupDownload').addEventListener('click',()=>{try{const b=new Blob([JSON.stringify(snapshot())],{type:'application/json'}),url=URL.createObjectURL(b),a=document.createElement('a');a.href=url;a.download='KOICA_Postcards_Backup_'+localFileTimestamp()+'.json';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),60000);saveMessage('✓ 백업 다운로드 요청 완료 · 다운로드 폴더에서 확인하세요.')}catch(err){saveMessage('⚠ 백업 생성 실패: '+err.message,true)}});
+$('#backupRestore').addEventListener('click',()=>$('#backupInput').click());
+$('#backupInput').addEventListener('change',async e=>{const f=e.target.files?.[0];if(!f)return;try{const data=JSON.parse(await f.text());if(!confirm('현재 작업을 백업 내용으로 교체할까요?'))return;applySnapshot(data);scheduleSave();saveMessage('✓ 백업을 불러왔습니다. 저장 중…')}catch(err){alert('백업을 불러오지 못했습니다: '+err.message)}finally{e.target.value=''}});
+window.addEventListener('pagehide',()=>{if(ready&&db&&!saveBusy){clearTimeout(saveTimer);saveNow()}});
+initializeAutosave();})();
+</script>
+</body></html>
